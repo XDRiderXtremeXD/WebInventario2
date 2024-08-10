@@ -1,0 +1,56 @@
+
+.contenedorGraficaBarras{
+    border: 2px solid black;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background: rgb(170,166,166);
+background: linear-gradient(146deg, rgba(170,166,166,1) 0%, rgba(186,186,186,1) 53%, rgba(192,53,53,0.6508081259847689) 95%);
+}
+
+h3{
+    text-align: center;
+}
+
+.barras{
+    display: flex;
+    justify-content: space-evenly;
+    height: 100vmax;
+}
+
+.barraNombre{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+}
+
+.barraHeightTotal{
+    display: flex;
+    align-items: flex-end;
+    height: 100%;
+    width: 50%;
+}
+
+.barra{
+    background-color: #9e0004;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-top: 1px solid black;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+}
+
+.barra p{
+    color: white;
+}
+
+.subId{
+    border-top: 2px solid black;
+    margin-top: 0;
+    width: 90%;
+    text-align: center;
+}

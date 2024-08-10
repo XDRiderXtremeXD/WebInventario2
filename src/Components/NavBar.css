@@ -1,0 +1,41 @@
+.contenedorNavBar{
+    display: flex;
+    background-color: #161917;
+    color: white;
+    margin: 30px 0 10px 0;
+    height: 60px;
+}
+
+.contenedorNavBar nav{
+    margin-left: 120px;
+}
+
+.contenedorNavBar ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    list-style-type: none;
+}
+
+.contenedorNavBar figure{
+    position: relative;
+    margin-left: auto;
+    text-align: center;
+    padding-left: 30px;
+}
+.contenedorNavBar .figureFlex{
+    display: flex;
+    align-items: center;
+}
+
+.contenedorNavBar figcaption{
+    margin-left: 15px;
+}
+
+
+#logoNavBar{
+position: absolute;
+left: 0;
+top: -15px;
+}

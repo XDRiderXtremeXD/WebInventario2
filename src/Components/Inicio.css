@@ -1,0 +1,43 @@
+.contenedorTablas {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.tablaStockMinimo {
+    width: 45%;
+    text-align: center;
+}
+
+.tablaMovimiento {
+    width: 45%;
+    text-align: center;
+}
+
+.tablaMovimiento table {
+    background-color: #70160e;
+    color: white;
+}
+
+.tablaStockMinimo table {
+    background-color: #70160e;
+    color: white;
+}
+
+.graficaStock{
+    width: 45%;
+    height: 400px;
+}
+
+.graficaStockMenores{
+    width: 45%;
+    height: 400px;
+}
+
+.contenedorGraficas{
+    display: flex;
+    justify-content: space-around;  
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
