@@ -18,6 +18,12 @@
     list-style-type: none;
 }
 
+.contenedorNavBar ul .lista{
+    color: white;
+    text-decoration: none;
+}
+
+
 .contenedorNavBar figure{
     position: relative;
     margin-left: auto;
@@ -38,4 +44,8 @@
 position: absolute;
 left: 0;
 top: -15px;
+}
+
+.contenedorNavBar .active{
+    color: red !important; 
 }
