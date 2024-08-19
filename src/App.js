@@ -1,16 +1,24 @@
 import './App.css';
 import Footer from './Components/Footer';
-import Inicio from './Components/Inicio';
 import NavBar from './Components/NavBar';
+import Configuracion from './Pages/Configuracion';
+import Inicio from './Pages/Inicio';
+import Productos from './Pages/Productos';
+import { BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 
-function App() {
+const App = () => {
   return (
-    <div className="Contenedor">
-      <NavBar/>
-      <Inicio/>
-      <Footer/>
-    </div>
+    <Router>
+      <NavBar />
+      <Routes>
+        <Route path="/inicio" element={<Inicio />} />
+        <Route path="/configuracion" element={<Configuracion />} />
+        <Route path="/productos" element={<Productos />} />
+        <Route path="*" element={<h1>En construccion</h1>} />
+      </Routes>
+      <Footer />
+    </Router>
   );
-}
+};
 
 export default App;

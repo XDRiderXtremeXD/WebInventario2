@@ -3,12 +3,6 @@ import './GraficaBarras.css';
 
 const GraficaBarras = (props) => {
 
-    props = {
-        titulo: "STOCK", barras: [{ nombre: "Electronicos", cantidad: 5 },
-        { nombre: "Hogar", cantidad: 10 }, { nombre: "Ferreteria", cantidad: 15 }
-        ]
-    }
-
     let mayorCantidad = (props.barras.reduce((max = 0, barra) => barra.cantidad > max.cantidad ? barra : max));
     mayorCantidad = mayorCantidad.cantidad
     

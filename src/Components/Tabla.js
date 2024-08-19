@@ -7,8 +7,8 @@ const TdTabla = (props) => {
             props.keyProp === "imagen" ?
             <img src={props.item[props.keyProp]} alt={props.keyProp} /> 
             :
-            props.keyProp === "accion" ?
-                <img onClick={() => props.item.accion.funcion(props.item.id)} className="icon" src={props.item.accion.icono} alt={props.item.accion.nombre}  /> 
+            props.keyProp === "Accion" ?
+                <img onClick={() => props.item.Accion.funcion(props.item.id)} className="icon" src={props.item.Accion.icono} alt={props.item.Accion.nombre}  /> 
             :
             props.item[props.keyProp]
             }</td>
@@ -16,7 +16,21 @@ const TdTabla = (props) => {
 }
 
 const Tabla = (props) => {
-    let keys = props.tabla.length !== 0 ? Object.keys(props.tabla[0]) : [];
+    
+    function filtrarAtributos(atributos, datos) {
+        return datos.map(item => {
+            let nuevoObjeto = {};
+            atributos.forEach(atributo => {
+                if (item.hasOwnProperty(atributo)) {
+                    nuevoObjeto[atributo] = item[atributo];
+                }
+            });
+            return nuevoObjeto;
+        });
+    }
+   
+    const tabla=filtrarAtributos(props.atributos,props.tabla)
+    let keys = props.atributos;
 
     return (
         <table className={props.clase}>
@@ -30,7 +44,7 @@ const Tabla = (props) => {
                 </thead>
             }
             <tbody>
-                {props.tabla.map((item, rowIndex) => (
+                {tabla.map((item, rowIndex) => (
                     <tr key={rowIndex}>
                         {keys.map((key, colIndex) => 
                             (<TdTabla key={colIndex} keyProp={key} item={item} />)

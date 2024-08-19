@@ -1,0 +1,67 @@
+.contenedorTarjetaProducto {
+    border: 1px solid black;
+    align-content: center;
+    align-items: center;
+    background-color: rgb(219, 218, 218);
+    padding: 10px;
+}
+
+.contenedorTarjetaProducto figure {
+    text-align: center;
+}
+
+.contenedorTarjetaProducto figure img {
+    width: 250px;
+    height: 250px;
+    transition: transform 0.3s ease;
+}
+
+.contenedorTarjetaProducto figure img:hover {
+    transform: scale(1.2);
+}
+
+.contenedorTarjetaProducto .cajaStock {
+    display: flex;
+    gap: 5px;
+    justify-content: center;
+    align-items: center;
+    font-size: large;
+}
+
+.contenedorTarjetaProducto .cajaStock button {
+    border-radius: 100%;
+    height: 40px;
+    width: 40px;
+    font-size: large;
+}
+
+.contenedorModificacion {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.contenedorModificacion p {
+    text-align: center;
+}
+
+.cajaCantidad {
+    display: flex;
+    height: 50px;
+    align-items: center;
+    align-content: center;
+    text-align: center;
+    margin: 0;
+}
+
+.contenedorTarjetaProducto input {
+    width: 40px;
+    margin-left: 10px;
+}
+
+
+
+.contenedorTarjetaProducto button:hover {
+    cursor:pointer;
+    background-color: red;
+}
