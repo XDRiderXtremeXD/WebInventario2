@@ -66,13 +66,17 @@ const AsideFilter = (props) => {
 }
 
 const TarjetasProductos = (props) => {
-    let tablaFiltrada = tablaStock.filter(producto => props.state.categorias.length===0 || props.state.categorias.includes(producto.categoria));
+    let tablaFiltrada = props.actualiceProducts.filter(producto => props.state.categorias.length===0 || props.state.categorias.includes(producto.categoria));
     tablaFiltrada=tablaFiltrada.filter(producto => props.state.match==="" || producto.titulo.toLowerCase().includes(props.state.match.toLowerCase()));
     tablaFiltrada=tablaFiltrada.filter(producto => props.state.esStockMayorIgualA?(producto.stock>=props.state.cantidad):(producto.stock<=props.state.cantidad))
-
-    return (<div className='contenedorTarjetas'>
+   
+    
+   return (<div className='contenedorTarjetas'>
         {tablaFiltrada.map((elemento, index) =>
-            <TarjetaProducto key={index} img={elemento.imagen} nombre={elemento.titulo} id={elemento.id} stock={elemento.stock} />
+            <TarjetaProducto key={index} img={elemento.imagen} 
+            nombre={elemento.titulo} id={elemento.id} stock={elemento.stock} 
+             setActualiceProducts={props.setActualiceProducts} actualiceProducts={props.actualiceProducts}
+             userId={props.userId}/>
         )}
     </div>)
 }
@@ -80,11 +84,12 @@ const TarjetasProductos = (props) => {
 
 const Productos = () => {
     const [state, setState] = useState({ match: "", categorias: [], esStockMayorIgualA: true, cantidad: 0 });
+    const [actualiceProducts, setActualiceProducts] = useState(tablaStock)
     return (
         <div>
             <div className="contenedorConfiguracion">
                 <AsideFilter state={state} setState={setState} />
-                <TarjetasProductos state={state} />
+                <TarjetasProductos setActualiceProducts={setActualiceProducts} actualiceProducts={actualiceProducts} state={state} />
             </div>
         </div>
     );

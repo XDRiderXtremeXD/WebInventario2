@@ -1,0 +1,18 @@
+.container-login{
+    height: calc(100vh - 65px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   background-color: black;
+    background-image: url(https://png.pngtree.com/background/20230612/original/pngtree-warehouses-with-lots-of-boxes-in-the-middle-picture-image_3182349.jpg);
+    background-size: cover;
+}
+
+.formLogin{
+    border:2px solid black;
+    padding-bottom: 40px;
+    width: 600px !important;
+    background-color: #161917;
+    color: white;
+    padding-bottom: 30px !important;
+}

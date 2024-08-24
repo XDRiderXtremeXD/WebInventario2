@@ -1,6 +1,9 @@
 
 .AsideNav{
     color: aliceblue;
+    background-color: #70160e;
+    border-top: 2px solid black;
+    border-right: 2px solid black;
 } 
 
 .AsideNav .checkboxCategorias{
@@ -38,14 +41,12 @@
     height: 20px;
   }
   
-  /* Hide default HTML checkbox */
   .switch input {
     opacity: 0;
     width: 0;
     height: 0;
   }
   
-  /* The slider */
   .slider {
     position: absolute;
     cursor: pointer;

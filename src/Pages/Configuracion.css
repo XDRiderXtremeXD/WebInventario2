@@ -1,22 +1,22 @@
-.contenedorConfiguracion{
+.contenedorConfiguracion {
     display: flex;
     height: 85%;
     min-height: calc(100vh - 170px);
 }
 
-.AsideNav{
+.AsideNav {
     background-color: #b9030f;
     border: 1px solid black;
     padding: 10px;
 }
 
-.AsideNav ul{
+.AsideNav ul {
     padding-left: 10px;
     padding-right: 10px;
 }
 
 
-.AsideNav li{
+.AsideNav li {
     font-size: 20px;
     margin-bottom: 50px;
     margin-top: 50px;
@@ -25,11 +25,11 @@
     cursor: pointer;
 }
 
-.AsideNav .liSeleccionado{
+.AsideNav .liSeleccionado {
     color: black;
 }
 
-.formSection{
+.formSection {
     margin: 10px;
     padding: 5px;
     width: 100vmax;
@@ -37,40 +37,55 @@
     text-align: center;
 }
 
-.formSection form{
+.formUser {
+    position: relative;
+    background-color: white;
+    width: 250px !important;
+    padding: 30px;
+    border-radius: 2%;
+}
+
+.formSection form {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    max-width: 500px ;
+    max-width: 500px;
     margin-left: auto;
     margin-right: auto;
     text-align: left;
 }
 
-.formSection textarea{
+.formSection textarea {
     height: 100px;
 }
 
-.formSection input, textarea , select{
+.formSection input,
+textarea,
+select {
     border-radius: 10px;
     font-size: 15px;
     padding: 5px;
-    border: 1px solid black ;
+    border: 1px solid black;
     width: 100%;
 }
 
-.formSection .icon{
+.formSection .icon {
     display: inline-block;
     width: 30px;
     margin-left: 10px;
     height: 40px;
 }
 
-.formSection .icon-input{
-display: flex;
+.formSection .icon-input {
+    display: flex;
 }
 
-.contenedorListUsuario{
+.formSection #submit {
+    margin-top: 20px;
+    margin-left: 6px;
+}
+
+.contenedorListUsuario {
     width: 100%;
     padding: 30px;
     height: fit-content;

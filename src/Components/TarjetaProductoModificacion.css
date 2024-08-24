@@ -1,67 +1,39 @@
-#contenedorTarjetaProducto{
+
+#contenedor-tarjeta-producto-modificacion {
+    position: relative;
+    z-index: 2;
     border: 1px solid black;
     align-content: center;
     display: flex;
     align-items: center;
-    background-color: rgb(219, 218, 218);
-    padding: 10px;
-}
-#contenedorTarjetaProducto img{
-width: 250px;
-height: 250px;
+    width: fit-content;
+    background-color:  white;
+    padding: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 5%;
+    text-align: center;
 }
 
-.contenedorModificacion{
+.modo-modificacion{
+    font-weight: bolder;
+    font-size: large;
+}
+
+.contenedor-modificacion {
     display: flex;
     flex-direction: column;
-    gap: 30px;
-}
-.contenedorModificacion p{
-    text-align: center;
+    justify-content: start;
+    gap: 20px;
 }
 
-.cajaCantidad{
-    display: flex;
-    height: 50px;
-    align-items: center;
-    align-content: center;
-    text-align: center;
+.nuevoProveedor{
+    display: block;
+    text-align: start;
+}
+.nuevoProveedor input{
+    width: 90% ;
     margin: 0;
 }
-
-.cajaCantidad input{
-    width: 40px;
-    margin-left: 10px;
-}
-
-
-
-.guardar{
-    border: 1px solid black;
-    width: 12%;
-    height: 50px;
-    align-content: center;
-    text-align: center;
-    margin-top: 150px;
-    margin-left: -148px;
-    
-}
-
-.guardar button{
-    border: 1px solid black;
-    width: 100%;
-    height: 50px;
-    color: red;
-    
-    
-}
-
-
-#contenedor figure img:hover{
-    opacity: 0.7;
-}
-
-.arribaAbajo button:hover{
-    font-size: 15px;
-}
-

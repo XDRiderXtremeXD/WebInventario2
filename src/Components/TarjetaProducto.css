@@ -35,16 +35,6 @@
     font-size: large;
 }
 
-.contenedorModificacion {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-}
-
-.contenedorModificacion p {
-    text-align: center;
-}
-
 .cajaCantidad {
     display: flex;
     height: 50px;

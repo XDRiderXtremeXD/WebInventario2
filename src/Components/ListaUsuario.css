@@ -1,0 +1,23 @@
+.contenedorListUsuario button {
+    padding: 10px;
+    margin-bottom: 15px;
+    color: #70160e!important;
+    font-size: 20px;
+    font-weight: 500;
+    padding: 0.5em 1.2em;
+    background: rgba(0, 0, 0, 0);
+    border: 2px solid;
+    border-color: #70160e;
+    transition: all 1s ease;
+    position: relative;
+}
+
+.contenedorListUsuario button:hover {
+    background: #70160e;
+    color: #fff !important;
+    cursor: pointer;
+}
+
+.icon {
+    width: 25px;
+}
