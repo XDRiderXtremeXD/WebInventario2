@@ -57,8 +57,8 @@ const FormUsuario = (props) => {
                 <input id="dni" type="numeric" />
                 <label htmlFor="usuario-tipo">Elige el tipo de usuario:</label>
                 <select name="tipo-usuarios" id="usuario-tipo">
-                    <option value="dog">User</option>
-                    <option value="cat">Master</option>
+                    <option value="User">User</option>
+                    <option value="Master">Master</option>
                 </select>
                 <input id="submit" type="submit" value="Guardar" />
             </form>

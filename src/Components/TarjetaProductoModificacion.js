@@ -14,44 +14,41 @@ const TarjetaProductoModificacion = (props) => {
         const fechaFormateada = `${year}-${month}-${day}`;
         return fechaFormateada
     }
+ 
+    const AgregarTablaMovimiento=(movimiento)=>{
+       let {productoIndice,cantidad,tipoMovimiento,proveedor}=movimiento
+       
+        tablaMovimiento.push({
+            id_producto: tablaStock[productoIndice].id,
+            imagen: tablaStock[productoIndice].imagen,
+            titulo: tablaStock[productoIndice].titulo,
+            fecha: GetFechaActual(),
+            usuario_registro: props.userId,
+            cantidad,
+            tipoMovimiento,
+            proveedor
+        })
+    }
 
     const Modificar = () => {
         const cantidad = Number(document.getElementById('countInventary').value);
         const productoIndiceFind = (producto) => producto.id === props.producto.id;
         const productoIndice = tablaStock.findIndex(productoIndiceFind)
         let stockActual = tablaStock[productoIndice].stock;
+       
         if (props.isModalOpenModifyProduct.agregar) {
             if (proveedor_ === null) {
                 alert('Debes de seleccionar un proveedor');
                 return;
             }
             tablaStock[productoIndice] = { ...tablaStock[productoIndice], stock: stockActual + cantidad, proveedor: proveedor_ }
-
-            tablaMovimiento.push({
-                id_producto: tablaStock[productoIndice].id,
-                imagen: tablaStock[productoIndice].imagen,
-                titulo: tablaStock[productoIndice].titulo,
-                tipoMovimiento: "Entrada",
-                cantidad: cantidad,
-                fecha: GetFechaActual(),
-                usuario_registro: props.userId,
-                proveedor: proveedor_
-            })
+            AgregarTablaMovimiento({productoIndice,cantidad:cantidad,tipoMovimiento:'Entrada',proveedor:proveedor_})
         }
         else {
             tablaStock[productoIndice] = { ...tablaStock[productoIndice], stock: stockActual - cantidad }
-
-            tablaMovimiento.push({
-                id_producto: tablaStock[productoIndice].id,
-                imagen: tablaStock[productoIndice].imagen,
-                titulo: tablaStock[productoIndice].titulo,
-                tipoMovimiento: "Salida",
-                cantidad: cantidad,
-                fecha: GetFechaActual(),
-                usuario_registro: props.userId,
-                proveedor: null
-            })
+            AgregarTablaMovimiento({productoIndice:productoIndice,cantidad:cantidad,tipoMovimiento:'Salida',proveedor:null})
         }
+
         props.setIsModalOpenModifyProduct({ openModal: false, agregar: true });
         props.setActualiceProducts([...tablaStock])
     }

@@ -82,14 +82,14 @@ const TarjetasProductos = (props) => {
 }
 
 
-const Productos = () => {
+const Productos = (props) => {
     const [state, setState] = useState({ match: "", categorias: [], esStockMayorIgualA: true, cantidad: 0 });
     const [actualiceProducts, setActualiceProducts] = useState(tablaStock)
     return (
         <div>
             <div className="contenedorConfiguracion">
                 <AsideFilter state={state} setState={setState} />
-                <TarjetasProductos setActualiceProducts={setActualiceProducts} actualiceProducts={actualiceProducts} state={state} />
+                <TarjetasProductos setActualiceProducts={setActualiceProducts} actualiceProducts={actualiceProducts} state={state} userId={props.userId}/>
             </div>
         </div>
     );

@@ -6,9 +6,9 @@ const Footer = () => {
         <div className='contenedorFooter'>
             <p>copyright © 2024</p>
             <div className='redes'>
-            <img id='facebook' alt="logo" src="/facebook.png" />
-            <img id='whatsapp' alt="logo" src="/whatsapp.png" />
-            <img id='instagram' alt="logo" src="/instagram.png" />
+            <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer"><img id="facebook" alt="logo" src="/facebook.png" /></a>
+            <a href="https://www.whatsapp.com" target="_blank" rel="noopener noreferrer"><img id="whatsapp" alt="logo" src="/whatsapp.png" /></a>
+            <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer"><img id="instagram" alt="logo" src="/instagram.png" /></a>
             </div>
         </div>
     );

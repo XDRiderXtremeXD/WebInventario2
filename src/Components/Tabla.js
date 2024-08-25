@@ -30,14 +30,14 @@ const Tabla = (props) => {
     }
    
     const tabla=filtrarAtributos(props.atributos,props.tabla)
-    let keys = props.atributos;
+    let atributos = props.atributos;
 
     return (
         <table className={props.clase}>
             {(props.verTitulos === undefined || props.verTitulos) &&
                 <thead>
                     <tr>
-                        {keys.map((item, index) => (
+                        {atributos.map((item, index) => (
                             <th key={index}>{item}</th>
                         ))}
                     </tr>
@@ -46,7 +46,7 @@ const Tabla = (props) => {
             <tbody>
                 {tabla.map((item, rowIndex) => (
                     <tr key={rowIndex}>
-                        {keys.map((key, colIndex) => 
+                        {atributos.map((key, colIndex) => 
                             (<TdTabla key={colIndex} keyProp={key} item={item} />)
                         )}
                     </tr>

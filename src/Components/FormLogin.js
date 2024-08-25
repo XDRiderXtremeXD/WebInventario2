@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom';
 
 const FormLogin = (props) => {
     const navigate = useNavigate();
+    
     useEffect(() => {
         if (props.userId !== null)
             navigate('/inicio');
@@ -12,14 +13,14 @@ const FormLogin = (props) => {
 
 
     function VerificarLogin(e) {
-        e.preventDefault();
-        const correo = e.target[0].value;
-        const password = e.target[1].value;
+        e.preventDefault();//para asegurarnos que no reinicialice el componente
+        const correo = e.target["correo"].value;
+        const password = e.target["password"].value;
         const even = (element) => element.Email === correo && element.password === password;
-        const elemento = usuarios.find(even);
+        const usuario = usuarios.find(even);
 
-        if (elemento !== undefined) 
-            props.setUserId(elemento.id);
+        if (usuario !== undefined) 
+            props.setUserId(usuario.id);
         else
             alert("No se ingreso bien el correo o contraseña");
     }
