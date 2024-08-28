@@ -118,7 +118,7 @@ export const tablaStock = [
 
     // Electrónica
     {
-        imagen: "/imagenesProductos/sillagamer.jpg",
+        imagen: "/imagenesProductos/celular.jpg",
         titulo: "Celular Samsung A15",
         stock: 20,
         id: 11,
