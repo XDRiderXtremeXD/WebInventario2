@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './TarjetaProductoModificacion.css';
 import { proveedores, tablaMovimiento, tablaStock } from '../Data/Data';
 import Swal from 'sweetalert2';
+import Alertas from '../Auxiliar/Alertas';
 
 const TarjetaProductoModificacion = (props) => {
 
@@ -56,6 +57,8 @@ const TarjetaProductoModificacion = (props) => {
 
         props.setIsModalOpenModifyProduct({ openModal: false, agregar: true });
         props.setActualiceProducts([...tablaStock])
+
+        Alertas({tipo:"ok",frase:"Productos Actualizados"})
     }
     const CambiarProveedor = (e) => {
         setProveedor_(e.target.value)

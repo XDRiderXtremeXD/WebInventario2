@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import './FormLogin.css';
 import { usuarios } from '../Data/Data';
 import { useNavigate } from 'react-router-dom';
-import Swal from 'sweetalert2';
+import Alertas from '../Auxiliar/Alertas';
 
 const FormLogin = (props) => {
     const navigate = useNavigate();
@@ -23,11 +23,7 @@ const FormLogin = (props) => {
         if (usuario !== undefined)
             props.setUserId(usuario.id);
         else {
-            Swal.fire({
-                icon: "error",
-                title: "Error usuario o contraseña",
-                text: "Correo o contraseña no valido",
-            });
+            Alertas({tipo:"error",frase:"Correo o contraseña no valido"})
         }
     }
 

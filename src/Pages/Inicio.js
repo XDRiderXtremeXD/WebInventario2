@@ -4,7 +4,6 @@ import Tabla from '../Components/Tabla';
 import GraficaBarras from '../Components/GraficaBarras';
 import TarjetaProductoModificacion from '../Components/TarjetaProductoModificacion';
 import { tablaMovimiento, tablaStock } from '../Data/Data';
-import Swal from 'sweetalert2';
 
 const Inicio = (props) => {
 
@@ -19,14 +18,7 @@ const Inicio = (props) => {
         return productosOrdenados.slice(0, cantidad);
     }
     function setActualiceProducts(arreglo) {
-
-        Swal.fire({
-            position: "center",
-            icon: "success",
-            title: "Productos Actualizados!",
-            showConfirmButton: false,
-            timer: 1500
-          });
+      console.log(arreglo)
     }
 
     //PRODUCTOS CON MENOR STOCK

@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
 import { categorias, tablaStock } from '../Data/Data';
 import { v4 as uuidv4 } from 'uuid';
-import Swal from 'sweetalert2';
+import  Alertas  from '../Auxiliar/Alertas';
 
 const FormProducto = () => {
     const [imagen, setImagen] = useState(null);
@@ -15,30 +15,26 @@ const FormProducto = () => {
         const categoria = e.target.categorias.value;
         let categoriaProducto = categoria;
 
+        if (nombre.length === 0) {
+            Alertas({tipo:"error",frase:"Debes de digitar el nombre"});
+        }
+
+        if (descripcion.length === 0) {
+            Alertas({tipo:"error",frase:"Debes de digitar una descripción"});
+        }
+
         if (imagen === null) {
-            Swal.fire({
-                icon: "error",
-                title: "Oops...",
-                text: "Debes seleccionar una imagen"
-              });
+            Alertas({tipo:"error",frase:"Debes seleccionar una imagen"});
             return;
         }
         if (categoria_ === null) {
-            Swal.fire({
-                icon: "error",
-                title: "Oops...",
-                text: "Debes seleccionar una categoria"
-              });
+            Alertas({tipo:"error",frase:"Debes seleccionar una categoria"});
             return;
         }
         if (categoria === "Crear Categoria") {
             categoriaProducto = e.target.nuevaCategoria.value;
             if (categoriaProducto === "" || categorias.includes(categoriaProducto)) {
-                Swal.fire({
-                    icon: "error",
-                    title: "Oops...",
-                    text: "Debes de digitar una nueva categoria"
-                  });
+                Alertas({tipo:"error",frase:"Debes de digitar una nueva categoria"});
                 return
             }
         }
@@ -48,21 +44,10 @@ const FormProducto = () => {
                 categorias.push(categoriaProducto)
                 setCategoria_(categoriaProducto)
             }
-            Swal.fire({
-                position: "center",
-                icon: "success",
-                title: "Producto Creado",
-                showConfirmButton: false,
-                timer: 1500
-              });
+            Alertas({tipo:"ok",frase:"Producto Creado"});
         }
-        else
-        {
-            Swal.fire({
-                icon: "error",
-                title: "Oops...",
-                text: "Error: Existe un producto con el mismo nombre"
-              });
+        else {
+            Alertas({tipo:"error",frase:"Error: Existe un producto con el mismo nombre"});
         }
     };
 

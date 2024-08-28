@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import React from 'react';
 import { useLocation,useNavigate} from 'react-router-dom';
 import { usuarios } from '../Data/Data';
-import Swal from 'sweetalert2';
+import Alertas from '../Auxiliar/Alertas';
 
 const NavBar = (props) => {
 
@@ -12,20 +12,15 @@ const NavBar = (props) => {
     const usuario = usuarios.find(usuario => usuario.id === props.userId);
 
     function desloguearAccion() {
-
-        Swal.fire({
-            title: "Deseas cerrar sesion?",
-            showDenyButton: true,
-            confirmButtonText: "Si",
-            denyButtonText: "No"
-          }).then((result) => {
-            if (result.isConfirmed) {
+        Alertas({
+            tipo: "pregunta",frase:"frase: Deseas cerrar sesion?",
+            funcionAcepta: () => {
                 props.desloguear();
                 navigate('/Login');
-            } else if (result.isDenied) {
-              Swal.fire("Tu potencial es infinito, atrévete a explorarlo", "", "");
-            }
-          });
+            },funcionDeniega:() => {
+                Alertas({tipo:"info",frase:"Tu potencial es infinito, atrévete a explorarlo"})
+            } 
+        })
     }
 
     return (
