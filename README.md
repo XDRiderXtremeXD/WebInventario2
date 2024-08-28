@@ -1,3 +1,5 @@
+# Esto es solo un inventario con una base de datos simulada en js dentro de los archivos, no esta conectada a una base de datos. Fines educativos.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
