@@ -13,7 +13,7 @@ const NavBar = (props) => {
 
     function desloguearAccion() {
         Alertas({
-            tipo: "pregunta",frase:"frase: Deseas cerrar sesion?",
+            tipo: "pregunta",frase:"Deseas cerrar sesion?",
             funcionAcepta: () => {
                 props.desloguear();
                 navigate('/Login');
