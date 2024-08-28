@@ -10,16 +10,19 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Home from './Pages/Home';
 import PaginaNoValida from './Pages/PaginaNoValida';
 import Registros from './Pages/Registros';
+import { usuarios } from './Data/Data';
 
 const App = () => {
 
   const [userId, setUserId] = useState(null);
+  let usuario=usuarios.find(usuario => usuario.id === userId);
+
   return (
     <Router>
       {userId !== null && <NavBar userId={userId} desloguear={() => setUserId(null)} />}
       <Routes>
         {userId !== null && <Route path="/inicio" element={<Inicio userId={userId}/>} />}
-        {userId !== null && <Route path="/configuracion" element={<Configuracion userId={userId}/>} />}
+        {userId !== null && usuario.TipoUsuario==="Master" && <Route path="/configuracion" element={<Configuracion userId={userId}/>} />}
         {userId !== null && <Route path="/productos" element={<Productos userId={userId}/>} />}
         {userId !== null && <Route path="/registros" element={<Registros/>} />}
         <Route path="/Login" element={<FormLogin userId={userId} setUserId={setUserId} />}/>

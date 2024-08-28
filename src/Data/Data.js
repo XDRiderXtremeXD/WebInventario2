@@ -250,7 +250,7 @@ export const usuarios = [
         Email: "maria.gomez@example.com",
         DNI: "87654321",
         TipoUsuario: "Usuario",
-        password: "Yh7fWq3D",
+        password: "123456",
         telefono: "555-5678",
         direccion: "Calle de la Paz 456, Ciudad"
     },

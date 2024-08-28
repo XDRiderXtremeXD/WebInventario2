@@ -31,7 +31,7 @@ const NavBar = (props) => {
                     <li><Link className={`lista ${location.pathname === '/inicio' ? 'active' : ''}`} to="/inicio">Inicio</Link></li>
                     <li><Link className={`lista ${location.pathname === '/productos' ? 'active' : ''}`} to="/productos">Productos</Link></li>
                     <li><Link className={`lista ${location.pathname === '/registros' ? 'active' : ''}`} to="/registros">Registros</Link></li>
-                    <li><Link className={`lista ${location.pathname === '/configuracion' ? 'active' : ''}`} to="/configuracion">Configuración</Link></li>
+                    {usuario.TipoUsuario==="Master" && <li><Link className={`lista ${location.pathname === '/configuracion' ? 'active' : ''}`} to="/configuracion">Configuración</Link></li>}
                 </ul>
             </nav>
 

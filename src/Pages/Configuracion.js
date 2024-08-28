@@ -23,7 +23,7 @@ const Configuracion = (props) => {
         <div>
             <div className="contenedorConfiguracion">
                 <AsideNav opcion={opcion} setOpcion={setOpcion} activarUsuarios={usuario.TipoUsuario === "Master"} />
-                {usuario.TipoUsuario === "Master" && opcion === 1 && <ListUsuario userId={props.userId} />}
+                {opcion === 1 && <ListUsuario userId={props.userId} />}
                 {opcion === 2 && <FormProducto />}
             </div>
         </div>
