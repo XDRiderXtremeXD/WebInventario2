@@ -1,5 +1,5 @@
 # Esto es solo un inventario con una base de datos simulada en js dentro de los archivos, no esta conectada a una base de datos. Fines educativos.
-##Cuenta prueba:  correo: angelo_chumpitaz@correo.com contraseña:123456
+## Cuenta prueba:  correo: angelo_chumpitaz@correo.com contraseña:123456
 
 # Getting Started with Create React App
 
