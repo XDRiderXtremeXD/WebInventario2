@@ -18,7 +18,7 @@ const App = () => {
     <Router>
       {userId !== null && <NavBar userId={userId} desloguear={() => setUserId(null)} />}
       <Routes>
-        {userId !== null && <Route path="/inicio" element={<Inicio />} />}
+        {userId !== null && <Route path="/inicio" element={<Inicio userId={userId}/>} />}
         {userId !== null && <Route path="/configuracion" element={<Configuracion userId={userId}/>} />}
         {userId !== null && <Route path="/productos" element={<Productos userId={userId}/>} />}
         {userId !== null && <Route path="/registros" element={<Registros/>} />}

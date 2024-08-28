@@ -2,14 +2,15 @@ import React, { useEffect } from 'react';
 import './FormLogin.css';
 import { usuarios } from '../Data/Data';
 import { useNavigate } from 'react-router-dom';
+import Swal from 'sweetalert2';
 
 const FormLogin = (props) => {
     const navigate = useNavigate();
-    
+
     useEffect(() => {
         if (props.userId !== null)
             navigate('/inicio');
-    }, [props.userId,navigate]);
+    }, [props.userId, navigate]);
 
 
     function VerificarLogin(e) {
@@ -19,10 +20,15 @@ const FormLogin = (props) => {
         const even = (element) => element.Email === correo && element.password === password;
         const usuario = usuarios.find(even);
 
-        if (usuario !== undefined) 
+        if (usuario !== undefined)
             props.setUserId(usuario.id);
-        else
-            alert("No se ingreso bien el correo o contraseña");
+        else {
+            Swal.fire({
+                icon: "error",
+                title: "Error usuario o contraseña",
+                text: "Correo o contraseña no valido",
+            });
+        }
     }
 
     return (

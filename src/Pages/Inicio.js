@@ -1,25 +1,39 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Inicio.css';
 import Tabla from '../Components/Tabla';
 import GraficaBarras from '../Components/GraficaBarras';
+import TarjetaProductoModificacion from '../Components/TarjetaProductoModificacion';
 import { tablaMovimiento, tablaStock } from '../Data/Data';
+import Swal from 'sweetalert2';
 
-const Inicio = () => {
+const Inicio = (props) => {
+
+    const [productClick, setProductClick] = useState({ openModal: false, producto: null, agregar: true });
 
     function Funcion(e) {
-        console.log(e);
+        setProductClick({ openModal: true, agregar: true, producto: { ...e, nombre: e.titulo, img: e.imagen } })
     }
 
     function productosConMenorStock(cantidad, data) {
         const productosOrdenados = data.sort((a, b) => a.stock - b.stock);
         return productosOrdenados.slice(0, cantidad);
     }
+    function setActualiceProducts(arreglo) {
+
+        Swal.fire({
+            position: "center",
+            icon: "success",
+            title: "Productos Actualizados!",
+            showConfirmButton: false,
+            timer: 1500
+          });
+    }
 
     //PRODUCTOS CON MENOR STOCK
     let tablaStock2 = productosConMenorStock(10, tablaStock)
-    tablaStock2 = tablaStock2.map(function (item) {
-        item["Accion"] = { funcion: () => Funcion(item.id), nombre: "agregar", icono: "/agregarProducto.png" }
-        return item
+    tablaStock2 = tablaStock2.map(function (producto) {
+        producto["Accion"] = { funcion: () => Funcion(producto), nombre: "agregar", icono: "/agregarProducto.png" }
+        return producto
     });
 
     ///ULTIMOS 10 ELEMENTOS
@@ -60,9 +74,13 @@ const Inicio = () => {
                 </div>
                 <div className='tablaMovimiento'>
                     <h3>Últimos movimientos</h3>
-                    <Tabla tabla={tablaMovimiento2} atributos={["imagen", "titulo", "tipoMovimiento", "cantidad", "fecha"]} verTitulos={true} />
+                    <Tabla tabla={tablaMovimiento2} atributos={["imagen", "titulo", "tipoMovimiento", "cantidad","proveedor", "fecha"]} verTitulos={true} />
                 </div>
             </div>
+            {productClick.openModal &&
+                <TarjetaProductoModificacion isModalOpenModifyProduct={productClick}
+                    producto={productClick.producto} setIsModalOpenModifyProduct={setProductClick}
+                    setActualiceProducts={setActualiceProducts} userId={props.userId} />}
         </div>
     );
 };

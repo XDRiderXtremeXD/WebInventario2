@@ -1,6 +1,7 @@
 import React, { useState, useRef } from 'react';
 import { categorias, tablaStock } from '../Data/Data';
 import { v4 as uuidv4 } from 'uuid';
+import Swal from 'sweetalert2';
 
 const FormProducto = () => {
     const [imagen, setImagen] = useState(null);
@@ -15,17 +16,29 @@ const FormProducto = () => {
         let categoriaProducto = categoria;
 
         if (imagen === null) {
-            alert("Debes seleccionar una imagen");
+            Swal.fire({
+                icon: "error",
+                title: "Oops...",
+                text: "Debes seleccionar una imagen"
+              });
             return;
         }
         if (categoria_ === null) {
-            alert("Debes seleccionar una categoria");
+            Swal.fire({
+                icon: "error",
+                title: "Oops...",
+                text: "Debes seleccionar una categoria"
+              });
             return;
         }
         if (categoria === "Crear Categoria") {
             categoriaProducto = e.target.nuevaCategoria.value;
             if (categoriaProducto === "" || categorias.includes(categoriaProducto)) {
-                alert("Debes de digitar una nueva categoria")
+                Swal.fire({
+                    icon: "error",
+                    title: "Oops...",
+                    text: "Debes de digitar una nueva categoria"
+                  });
                 return
             }
         }
@@ -35,10 +48,22 @@ const FormProducto = () => {
                 categorias.push(categoriaProducto)
                 setCategoria_(categoriaProducto)
             }
-            alert("Producto Creado")
+            Swal.fire({
+                position: "center",
+                icon: "success",
+                title: "Producto Creado",
+                showConfirmButton: false,
+                timer: 1500
+              });
         }
         else
-            alert("Error: Existe un producto con el mismo nombre")
+        {
+            Swal.fire({
+                icon: "error",
+                title: "Oops...",
+                text: "Error: Existe un producto con el mismo nombre"
+              });
+        }
     };
 
     const manejarCambioImagen = (e) => {

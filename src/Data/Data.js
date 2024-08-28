@@ -38,7 +38,7 @@ export const tablaStock = [
         titulo: "Tornillo Cabeza Plana",
         stock: 30,
         id: 1,
-        categoria: "Ferreteria",
+        categoria: "Ferretería",
         descripcion: "Tornillo de cabeza plana de acero inoxidable, ideal para trabajos de montaje y ensamblaje."
     },
     {
@@ -46,7 +46,7 @@ export const tablaStock = [
         titulo: "Taladro Inalámbrico",
         stock: 40,
         id: 2,
-        categoria: "Ferreteria",
+        categoria: "Ferretería",
         descripcion: "Taladro inalámbrico con batería recargable, adecuado para perforar madera y metal."
     },
     {
@@ -54,7 +54,7 @@ export const tablaStock = [
         titulo: "Martillo de Uña",
         stock: 10,
         id: 3,
-        categoria: "Ferreteria",
+        categoria: "Ferretería",
         descripcion: "Martillo de uña con mango ergonómico, perfecto para clavar y retirar clavos."
     },
     {
@@ -62,7 +62,7 @@ export const tablaStock = [
         titulo: "Juego de Destornilladores",
         stock: 15,
         id: 4,
-        categoria: "Ferreteria",
+        categoria: "Ferretería",
         descripcion: "Juego de destornilladores de diferentes tamaños y tipos, ideal para reparaciones diversas."
     },
     {
@@ -70,7 +70,7 @@ export const tablaStock = [
         titulo: "Alicate de Corte",
         stock: 14,
         id: 5,
-        categoria: "Ferreteria",
+        categoria: "Ferretería",
         descripcion: "Alicate de corte con mango antideslizante, útil para cortar cables y alambres."
     },
 

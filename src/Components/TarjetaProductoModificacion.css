@@ -17,6 +17,10 @@
     text-align: center;
 }
 
+#contenedor-tarjeta-producto-modificacion figure img{
+    width: 300px;
+}
+
 .modo-modificacion{
     font-weight: bolder;
     font-size: large;

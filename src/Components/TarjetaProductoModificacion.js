@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './TarjetaProductoModificacion.css';
 import { proveedores, tablaMovimiento, tablaStock } from '../Data/Data';
+import Swal from 'sweetalert2';
 
 const TarjetaProductoModificacion = (props) => {
 
@@ -38,7 +39,11 @@ const TarjetaProductoModificacion = (props) => {
 
         if (props.isModalOpenModifyProduct.agregar) {
             if (proveedor_ === null) {
-                alert('Debes de seleccionar un proveedor');
+                Swal.fire({
+                    icon: "error",
+                    title: "Oops...",
+                    text: 'Debes de seleccionar un proveedor'
+                  });
                 return;
             }
             tablaStock[productoIndice] = { ...tablaStock[productoIndice], stock: stockActual + cantidad, proveedor: proveedor_ }
@@ -59,8 +64,9 @@ const TarjetaProductoModificacion = (props) => {
     return (
         <div className="modal-cubrir">
             <section id="contenedor-tarjeta-producto-modificacion">
-                <img onClick={() => props.setIsModalOpenModifyProduct({ openModal: false, agregar: true })} id="salir" src='/boton-x.png' alt='boton salir' />                <figure>
-                    <img src={props.producto.img} alt="Celular" />
+                <img onClick={() => props.setIsModalOpenModifyProduct({...props.isModalOpenModifyProduct,openModal: false})} id="salir" src='/boton-x.png' alt='boton salir' />              
+                  <figure>
+                    <img src={props.producto.img} alt="imagen producto" />
                     <figcaption>{props.producto.nombre} </figcaption>
                 </figure>
                 <div className="contenedor-modificacion">
