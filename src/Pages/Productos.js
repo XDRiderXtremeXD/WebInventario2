@@ -75,7 +75,7 @@ const TarjetasProductos = (props) => {
     return (<div className='contenedorTarjetas'>
         {tablaFiltrada.map((elemento, index) =>
             <TarjetaProducto key={index} img={elemento.imagen}
-                nombre={elemento.titulo} id={elemento.id} stock={elemento.stock}
+                nombre={elemento.titulo} id={elemento.id} stock={elemento.stock} descripcion={elemento.descripcion}
                 setActualiceProducts={props.setActualiceProducts} actualiceProducts={props.actualiceProducts}
                 userId={props.userId} />
         )}

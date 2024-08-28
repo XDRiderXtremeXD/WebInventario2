@@ -26,6 +26,7 @@
 
 .contenedorTarjetaProducto figure img:hover {
     transform: scale(1.2);
+    filter: blur(3px); 
 }
 
 .contenedorTarjetaProducto .cajaStock {
@@ -67,4 +68,17 @@
 .contenedorTarjetaProducto button:hover {
     cursor:pointer;
     background-color: red;
+}
+
+.producto-descripcion figure{
+ position: relative;
+}
+
+.producto-descripcion p{
+    position: absolute;
+    top: 25%;
+}
+
+.descripcion{
+    text-shadow: 0px 0px 5px rgb(255, 255, 255);
 }
