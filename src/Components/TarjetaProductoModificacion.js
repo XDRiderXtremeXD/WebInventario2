@@ -14,10 +14,10 @@ const TarjetaProductoModificacion = (props) => {
         const fechaFormateada = `${year}-${month}-${day}`;
         return fechaFormateada
     }
- 
-    const AgregarTablaMovimiento=(movimiento)=>{
-       let {productoIndice,cantidad,tipoMovimiento,proveedor}=movimiento
-       
+
+    const AgregarTablaMovimiento = (movimiento) => {
+        let { productoIndice, cantidad, tipoMovimiento, proveedor } = movimiento
+
         tablaMovimiento.push({
             id_producto: tablaStock[productoIndice].id,
             imagen: tablaStock[productoIndice].imagen,
@@ -35,18 +35,18 @@ const TarjetaProductoModificacion = (props) => {
         const productoIndiceFind = (producto) => producto.id === props.producto.id;
         const productoIndice = tablaStock.findIndex(productoIndiceFind)
         let stockActual = tablaStock[productoIndice].stock;
-       
+
         if (props.isModalOpenModifyProduct.agregar) {
             if (proveedor_ === null) {
                 alert('Debes de seleccionar un proveedor');
                 return;
             }
             tablaStock[productoIndice] = { ...tablaStock[productoIndice], stock: stockActual + cantidad, proveedor: proveedor_ }
-            AgregarTablaMovimiento({productoIndice,cantidad:cantidad,tipoMovimiento:'Entrada',proveedor:proveedor_})
+            AgregarTablaMovimiento({ productoIndice, cantidad: cantidad, tipoMovimiento: 'Entrada', proveedor: proveedor_ })
         }
         else {
             tablaStock[productoIndice] = { ...tablaStock[productoIndice], stock: stockActual - cantidad }
-            AgregarTablaMovimiento({productoIndice:productoIndice,cantidad:cantidad,tipoMovimiento:'Salida',proveedor:null})
+            AgregarTablaMovimiento({ productoIndice: productoIndice, cantidad: cantidad, tipoMovimiento: 'Salida', proveedor: null })
         }
 
         props.setIsModalOpenModifyProduct({ openModal: false, agregar: true });
@@ -59,8 +59,7 @@ const TarjetaProductoModificacion = (props) => {
     return (
         <div className="modal-cubrir">
             <section id="contenedor-tarjeta-producto-modificacion">
-                <button id="salir" onClick={() => props.setIsModalOpenModifyProduct({ openModal: false, agregar: true })}>X</button>
-                <figure>
+                <img onClick={() => props.setIsModalOpenModifyProduct({ openModal: false, agregar: true })} id="salir" src='/boton-x.png' alt='boton salir' />                <figure>
                     <img src={props.producto.img} alt="Celular" />
                     <figcaption>{props.producto.nombre} </figcaption>
                 </figure>

@@ -32,6 +32,10 @@
     width: 50px;
 }
 
+.contenedorTarjetas{
+  margin-top: 15px;
+}
+
 /* The switch - the box around the slider */
 .switch {
     margin: 10px;
@@ -113,4 +117,16 @@
     margin-left: 20px;
     margin-bottom: 20px;
     margin-right: 20px;
+  }
+
+  .checkboxCategorias {
+    gap: 15px;
+  }
+
+  #nombre-categorias{
+    margin: 0;
+  }
+
+  #nombre-buscar{
+    margin-bottom: 10px;
   }

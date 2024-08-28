@@ -11,10 +11,15 @@
     margin-bottom: 10px;
 }
 
+/* .contenedorTablas:hover{
+    box-shadow: 0px 0px 5px blue;
+} */
+
 .tablaStockMinimo {
     width: 45%;
     text-align: center;
 }
+
 
 .tablaMovimiento {
     width: 45%;
@@ -44,9 +49,17 @@
     height: 400px;
 }
 
+.graficaStock:hover{
+    box-shadow: 0px 0px 10px red;
+}
+
 .graficaStockMenores{
     width: 45%;
     height: 400px;
+}
+
+.graficaStockMenores:hover{
+    box-shadow: 0px 0px 10px red;
 }
 
 .contenedorGraficas{

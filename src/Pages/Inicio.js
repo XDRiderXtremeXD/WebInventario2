@@ -16,18 +16,18 @@ const Inicio = () => {
     }
 
     //PRODUCTOS CON MENOR STOCK
-    let tablaStock2 = productosConMenorStock(6, tablaStock)
+    let tablaStock2 = productosConMenorStock(10, tablaStock)
     tablaStock2 = tablaStock2.map(function (item) {
         item["Accion"] = { funcion: () => Funcion(item.id), nombre: "agregar", icono: "/agregarProducto.png" }
         return item
     });
 
-    ///ULTIMOS 6 ELEMENTOS
-    let tablaMovimiento2 = tablaMovimiento.slice(-6);
-    tablaMovimiento2=tablaMovimiento2.reverse();
-    
+    ///ULTIMOS 10 ELEMENTOS
+    let tablaMovimiento2 = tablaMovimiento.slice(-10);
+    tablaMovimiento2 = tablaMovimiento2.reverse();
+
     //BARRAS STOCK POR CATEGORIA Y  //BARRAS MENOR STOCK DE PRODUCTOS POR CATEGORIA
-    const maximoStockMenor=20;
+    const maximoStockMenor = 20;
     let barrasStockCategoria = [];
     let barrasStockProductosMenoresCategoria = [];
     tablaStock.forEach(element => {
@@ -35,10 +35,10 @@ const Inicio = () => {
             barrasStockCategoria.push({ nombre: element.categoria, cantidad: 0 })
             barrasStockProductosMenoresCategoria.push({ nombre: element.categoria, cantidad: 0 })
         }
-        
+
         let indiceCategoria = barrasStockCategoria.findIndex(item => item.nombre === element.categoria);
-        barrasStockCategoria[indiceCategoria].cantidad+=element.stock;
-        
+        barrasStockCategoria[indiceCategoria].cantidad += element.stock;
+
         if (element.stock < maximoStockMenor)
             barrasStockProductosMenoresCategoria[indiceCategoria].cantidad++;
     });
@@ -50,7 +50,7 @@ const Inicio = () => {
                     <GraficaBarras titulo="STOCK" barras={barrasStockCategoria} />
                 </div>
                 <div className='graficaStockMenores'>
-                    <GraficaBarras titulo={`Productos con Stock Menores a ${maximoStockMenor}`} barras={barrasStockProductosMenoresCategoria}/>
+                    <GraficaBarras titulo={`Productos con Stock Menores a ${maximoStockMenor}`} barras={barrasStockProductosMenoresCategoria} />
                 </div>
             </div>
             <div className='contenedorTablas'>

@@ -40,7 +40,7 @@ const FormUsuario = (props) => {
 
     return (
         <section className='formSection formUser' >
-            <p onClick={() => props.cerrar()} id='salir'>X</p>
+            <img onClick={() => props.cerrar()} id="salir" src='/boton-x.png' alt='boton salir'/>
             <div className="agregar">
                 <h2> Añadir Usuario</h2>
             </div>

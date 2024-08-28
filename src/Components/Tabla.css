@@ -5,12 +5,17 @@ table {
 
 th, td {
     padding: 3px;
-    border: 2px solid #000000;
+    border: 2px solid rgb(81, 81, 81);
     text-align: center;
 }
 
 th {
-    background-color: #f2f2f2;
+    background-color: #9e0004
+}
+
+td {
+    background-color: #161917;
+    color: white;
 }
 
 td img {

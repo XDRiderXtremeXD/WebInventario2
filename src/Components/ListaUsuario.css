@@ -1,19 +1,20 @@
 .contenedorListUsuario button {
     padding: 10px;
     margin-bottom: 15px;
-    color: #70160e!important;
+    color: #9e0004!important;
     font-size: 20px;
     font-weight: 500;
     padding: 0.5em 1.2em;
-    background: rgba(0, 0, 0, 0);
+    background: rgba(22,25,23,1);
     border: 2px solid;
-    border-color: #70160e;
+    border-color: #9e0004;
     transition: all 1s ease;
     position: relative;
+    border-radius: 15%;
 }
 
 .contenedorListUsuario button:hover {
-    background: #70160e;
+    background: #9e0004;
     color: #fff !important;
     cursor: pointer;
 }

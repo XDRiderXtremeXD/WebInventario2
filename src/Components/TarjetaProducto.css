@@ -2,18 +2,26 @@
     border: 1px solid black;
     align-content: center;
     align-items: center;
-    background-color: rgb(219, 218, 218);
     padding: 10px;
+    background-image: url("../../public/fondo-tarjetas.jpg");
+    background-size: cover;
+    border-radius: 5%;
+    font-weight: bold;
 }
 
 .contenedorTarjetaProducto figure {
     text-align: center;
 }
 
+.contenedorTarjetaProducto figcaption {
+    font-size: larger;
+}
+
 .contenedorTarjetaProducto figure img {
     width: 250px;
     height: 250px;
     transition: transform 0.3s ease;
+    border: 3px solid black;
 }
 
 .contenedorTarjetaProducto figure img:hover {
@@ -28,12 +36,17 @@
     font-size: large;
 }
 
-.contenedorTarjetaProducto .cajaStock button {
-    border-radius: 100%;
-    height: 40px;
-    width: 40px;
-    font-size: large;
+.boton-accion {
+    width: 30px;
+    cursor: pointer;
+    margin-left: 10px;
 }
+
+.boton-accion:hover{
+    border: 3px solid rgb(255, 111, 0);
+ border-radius: 50%;
+}
+
 
 .cajaCantidad {
     display: flex;

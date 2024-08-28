@@ -13,8 +13,8 @@ const TarjetaProducto = (props) => {
             </figure>
             <div className="cajaStock">
                 <p>{`Stock: ${props.stock}`}</p>
-                <button onClick={() => setIsModalOpenModifyProduct({ openModal: true, agregar: true })}>+</button>
-                <button onClick={() => setIsModalOpenModifyProduct({ openModal: true, agregar: false })}>-</button>
+                <img className='boton-accion' onClick={() => setIsModalOpenModifyProduct({ openModal: true, agregar: true })} src='/signo-mas.png' alt='mas'/>
+                <img className='boton-accion' onClick={() => setIsModalOpenModifyProduct({ openModal: true, agregar: false })} src='/signo-menos.png' alt='menos'/>
             </div>
             {isModalOpenModifyProduct.openModal &&
                 <TarjetaProductoModificacion isModalOpenModifyProduct={isModalOpenModifyProduct} 

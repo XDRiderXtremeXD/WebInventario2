@@ -57,7 +57,7 @@ const FormProducto = () => {
     }
 
     return (
-        <section className='formSection'>
+        <section className='formSection formProducto'>
             <div className="agregar">
                 <h2>Añadir Producto</h2>
             </div>
@@ -113,10 +113,12 @@ const FormProducto = () => {
                 {imagen && (
                     <div>
                         <h3>Vista previa:</h3>
-                        <img
-                            src={imagen}
-                            alt="Vista previa"
-                        />
+                        <div className='contenedor-vista-previa'>
+                            <img
+                                src={imagen}
+                                alt="Vista previa"
+                            />
+                        </div>
                     </div>
                 )}
                 <button type="submit">

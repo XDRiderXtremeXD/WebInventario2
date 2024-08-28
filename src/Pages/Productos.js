@@ -40,13 +40,14 @@ const AsideFilter = (props) => {
     return (
         <aside className="AsideNav">
             <div className='contenedorBuscar'>
-                <label htmlFor="fname">Buscar:</label>
+                <label id='nombre-buscar' htmlFor="fname">Buscar:</label>
                 <input type="text" id="buscar" name="buscar" onChange={Buscar} />
             </div>
 
             <div className='checkboxCategorias'>
+                <p id='nombre-categorias' htmlFor="">Categorias:</p>
                 {categorias.map((categoria, index) => (
-                    <label key={index}><input type="checkbox" id={`cbox${index}`} name={categoria} onChange={CheckCategoria} />{categoria}</label>
+                    <label key={index}><input className='checks' type="checkbox" id={`cbox${index}`} name={categoria} onChange={CheckCategoria} />{categoria}</label>
                 ))}
             </div>
             <p id='titleStock'>Stock</p>
@@ -66,17 +67,17 @@ const AsideFilter = (props) => {
 }
 
 const TarjetasProductos = (props) => {
-    let tablaFiltrada = props.actualiceProducts.filter(producto => props.state.categorias.length===0 || props.state.categorias.includes(producto.categoria));
-    tablaFiltrada=tablaFiltrada.filter(producto => props.state.match==="" || producto.titulo.toLowerCase().includes(props.state.match.toLowerCase()));
-    tablaFiltrada=tablaFiltrada.filter(producto => props.state.esStockMayorIgualA?(producto.stock>=props.state.cantidad):(producto.stock<=props.state.cantidad))
-   
-    
-   return (<div className='contenedorTarjetas'>
+    let tablaFiltrada = props.actualiceProducts.filter(producto => props.state.categorias.length === 0 || props.state.categorias.includes(producto.categoria));
+    tablaFiltrada = tablaFiltrada.filter(producto => props.state.match === "" || producto.titulo.toLowerCase().includes(props.state.match.toLowerCase()));
+    tablaFiltrada = tablaFiltrada.filter(producto => props.state.esStockMayorIgualA ? (producto.stock >= props.state.cantidad) : (producto.stock <= props.state.cantidad))
+
+
+    return (<div className='contenedorTarjetas'>
         {tablaFiltrada.map((elemento, index) =>
-            <TarjetaProducto key={index} img={elemento.imagen} 
-            nombre={elemento.titulo} id={elemento.id} stock={elemento.stock} 
-             setActualiceProducts={props.setActualiceProducts} actualiceProducts={props.actualiceProducts}
-             userId={props.userId}/>
+            <TarjetaProducto key={index} img={elemento.imagen}
+                nombre={elemento.titulo} id={elemento.id} stock={elemento.stock}
+                setActualiceProducts={props.setActualiceProducts} actualiceProducts={props.actualiceProducts}
+                userId={props.userId} />
         )}
     </div>)
 }
@@ -89,7 +90,7 @@ const Productos = (props) => {
         <div>
             <div className="contenedorConfiguracion">
                 <AsideFilter state={state} setState={setState} />
-                <TarjetasProductos setActualiceProducts={setActualiceProducts} actualiceProducts={actualiceProducts} state={state} userId={props.userId}/>
+                <TarjetasProductos setActualiceProducts={setActualiceProducts} actualiceProducts={actualiceProducts} state={state} userId={props.userId} />
             </div>
         </div>
     );
