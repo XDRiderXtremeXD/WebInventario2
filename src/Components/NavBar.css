@@ -1,17 +1,17 @@
-.contenedorNavBar{
+.contenedorNavBar {
     display: flex;
     color: white;
     margin: 30px 0 0 0;
     height: 60px;
-    background: rgb(22,25,23);
-    background: radial-gradient(circle, rgba(22,25,23,1) 59%, rgba(185,3,15,1) 100%);
+    background: rgb(22, 25, 23);
+    background: radial-gradient(circle, rgba(22, 25, 23, 1) 59%, rgba(185, 3, 15, 1) 100%);
 }
 
-.contenedorNavBar nav{
+.contenedorNavBar nav {
     margin-left: 120px;
 }
 
-.contenedorNavBar ul{
+.contenedorNavBar ul {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -19,52 +19,66 @@
     list-style-type: none;
 }
 
-.contenedorNavBar ul .lista{
+.contenedorNavBar ul .lista {
     color: white;
     text-decoration: none;
 }
 
 
-.contenedorNavBar figure{
+.contenedorNavBar figure {
     position: relative;
     margin-left: auto;
     text-align: center;
     padding-left: 30px;
 }
-.figureFlex img{
+
+.figureFlex img {
     width: 30px;
 }
 
-.contenedorNavBar #apagar{
+.contenedorNavBar #apagar {
     cursor: pointer;
     border-radius: 50%;
 }
 
-.contenedorNavBar #apagar:hover{
+.contenedorNavBar #apagar:hover {
     box-shadow: 0px 0px 15px 5px white
 }
 
-.contenedorNavBar .figureFlex{
+.contenedorNavBar .figureFlex {
     display: flex;
     align-items: center;
 }
 
 
-.contenedorNavBar figcaption{
+.contenedorNavBar figcaption {
     margin-left: 15px;
     margin-right: 15px;
 }
 
-#logoNavBar{
-position: absolute;
-left: 0;
-top: -15px;
+#logoNavBar {
+    position: absolute;
+    left: 0;
+    top: -15px;
 }
 
-.contenedorNavBar .active{
-    color: #ff0011!important; 
+.contenedorNavBar .active {
+    color: #ff0011 !important;
 }
 
-.lista:hover{
-    text-shadow: 0px 0px 9px rgba(255,212,0,1);
+.lista:hover {
+    text-shadow: 0px 0px 9px rgba(255, 212, 0, 1);
+}
+
+.figureFlex figcaption {
+    color: #FFFFFF; /* Color del texto base */
+    text-shadow: 
+        0 0 5px #FFF,           /* Sombra blanca cercana */
+        0 0 10px #FFF,          /* Sombra blanca adicional */
+        0 0 15px #FF0000,       /* Sombra roja cercana */
+        0 0 20px #FF0000,       /* Sombra roja más intensa */
+        0 0 30px #FF0000,       /* Sombra roja más difusa */
+        0 0 40px #000000,       /* Sombra negra cercana */
+        0 0 55px #000000,       /* Sombra negra más extendida */
+        0 0 75px #000000;       /* Sombra negra difusa */
 }

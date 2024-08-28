@@ -4,6 +4,7 @@ import Tabla from '../Components/Tabla';
 import GraficaBarras from '../Components/GraficaBarras';
 import TarjetaProductoModificacion from '../Components/TarjetaProductoModificacion';
 import { tablaMovimiento, tablaStock } from '../Data/Data';
+import Carrusel from '../Components/Carrusel';
 
 const Inicio = (props) => {
 
@@ -51,6 +52,9 @@ const Inicio = (props) => {
 
     return (
         <div className='contenedorInicio'>
+            <div className='contenedorCarrusel'>
+                <Carrusel/>
+            </div>
             <div className='contenedorGraficas'>
                 <div className='graficaStock'>
                     <GraficaBarras titulo="STOCK" barras={barrasStockCategoria} />

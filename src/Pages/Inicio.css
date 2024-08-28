@@ -68,3 +68,11 @@
     margin-top: 10px;
     margin-bottom: 10px;
 }
+.contenedorCarrusel{
+    margin: 5px;
+}
+
+.contenedorCarrusel img{
+    width: 100%;
+    height: 300px;
+}
