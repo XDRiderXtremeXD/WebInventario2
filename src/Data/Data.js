@@ -343,6 +343,26 @@ export const usuarios = [
         password: "123456",
         telefono: "555-1357",
 
+    },
+    {
+        id: 12,
+        Nombre: "Jefferson Salinas",
+        Email: "jefferson@correo.com",
+        DNI: "88990012",
+        TipoUsuario: "Master",
+        password: "123456",
+        telefono: "555-1354",
+
+    },
+    {
+        id: 13,
+        Nombre: "Abraham",
+        Email: "abraham@correo.com",
+        DNI: "88990013",
+        TipoUsuario: "Master",
+        password: "123456",
+        telefono: "555-1355",
+
     }];
 
     export const tablaMovimiento = [
