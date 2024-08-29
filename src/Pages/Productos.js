@@ -45,7 +45,7 @@ const AsideFilter = (props) => {
             </div>
 
             <div className='checkboxCategorias'>
-                <p id='nombre-categorias' htmlFor="">Categorias:</p>
+                <p id='nombre-categorias' htmlFor="">Categorías:</p>
                 {categorias.map((categoria, index) => (
                     <label key={index}><input className='checks' type="checkbox" id={`cbox${index}`} name={categoria} onChange={CheckCategoria} />{categoria}</label>
                 ))}

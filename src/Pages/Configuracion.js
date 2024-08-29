@@ -8,7 +8,7 @@ const AsideNav = ({ opcion, setOpcion, activarUsuarios }) => {
     return (
         <aside className="AsideNav">
             <ul>
-                {activarUsuarios && <li onClick={() => setOpcion(1)} className={opcion === 1 ? "liSeleccionado" : "lis"}>Usuario</li>}
+                {activarUsuarios && <li onClick={() => setOpcion(1)} className={opcion === 1 ? "liSeleccionado" : "lis"}>Usuarios</li>}
                 <li onClick={() => setOpcion(2)} className={opcion === 2 ? "liSeleccionado" : "lis"}>Productos</li>
             </ul>
         </aside>)
