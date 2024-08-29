@@ -17,14 +17,14 @@
     font-size: larger;
 }
 
-.contenedorTarjetaProducto figure img {
+.producto-descripcion figure img {
     width: 250px;
     height: 250px;
     transition: transform 0.3s ease;
     border: 3px solid black;
 }
 
-.contenedorTarjetaProducto figure img:hover {
+.producto-descripcion figure img:hover {
     transform: scale(1.2);
     filter: blur(3px); 
 }
@@ -61,6 +61,7 @@
 .contenedorTarjetaProducto input {
     width: 40px;
     margin-left: 10px;
+    border: 1px solid;
 }
 
 

@@ -37,18 +37,28 @@ const TarjetaProductoModificacion = (props) => {
         const productoIndiceFind = (producto) => producto.id === props.producto.id;
         const productoIndice = tablaStock.findIndex(productoIndiceFind)
         let stockActual = tablaStock[productoIndice].stock;
+        let proveedor=proveedor_;
+
+        if (proveedor === "Crear Proveedor") {
+            proveedor = document.getElementById('nuevoProveedor').value;
+            if (proveedor === "" || proveedores.includes(proveedor)) {
+                Alertas({ tipo: "error", frase: "Digite nuevo proveedor" });
+                return;
+            }
+        }
 
         if (props.isModalOpenModifyProduct.agregar) {
-            if (proveedor_ === null) {
+            if (proveedor === null) {
                 Swal.fire({
                     icon: "error",
                     title: "Oops...",
                     text: 'Debes de seleccionar un proveedor'
-                  });
+                });
                 return;
             }
-            tablaStock[productoIndice] = { ...tablaStock[productoIndice], stock: stockActual + cantidad, proveedor: proveedor_ }
-            AgregarTablaMovimiento({ productoIndice, cantidad: cantidad, tipoMovimiento: 'Entrada', proveedor: proveedor_ })
+            tablaStock[productoIndice] = { ...tablaStock[productoIndice], stock: stockActual + cantidad, proveedor: proveedor }
+            AgregarTablaMovimiento({ productoIndice, cantidad: cantidad, tipoMovimiento: 'Entrada', proveedor: proveedor })
+            if(proveedor_==="Crear Proveedor")proveedores.push(proveedor);
         }
         else {
             tablaStock[productoIndice] = { ...tablaStock[productoIndice], stock: stockActual - cantidad }
@@ -58,7 +68,7 @@ const TarjetaProductoModificacion = (props) => {
         props.setIsModalOpenModifyProduct({ openModal: false, agregar: true });
         props.setActualiceProducts([...tablaStock])
 
-        Alertas({tipo:"ok",frase:"Productos Actualizados"})
+        Alertas({ tipo: "ok", frase: "Productos Actualizados" })
     }
     const CambiarProveedor = (e) => {
         setProveedor_(e.target.value)
@@ -67,8 +77,8 @@ const TarjetaProductoModificacion = (props) => {
     return (
         <div className="modal-cubrir">
             <section id="contenedor-tarjeta-producto-modificacion">
-                <img onClick={() => props.setIsModalOpenModifyProduct({...props.isModalOpenModifyProduct,openModal: false})} id="salir" src='/boton-x.png' alt='boton salir' />              
-                  <figure>
+                <img onClick={() => props.setIsModalOpenModifyProduct({ ...props.isModalOpenModifyProduct, openModal: false })} id="salir" src='/boton-x.png' alt='boton salir' />
+                <figure>
                     <img src={props.producto.img} alt="imagen producto" />
                     <figcaption>{props.producto.nombre} </figcaption>
                 </figure>
@@ -93,11 +103,11 @@ const TarjetaProductoModificacion = (props) => {
 
                     {proveedor_ === "Crear Proveedor" &&
                         <section className='nuevoProveedor'>
-                            <label htmlFor="nuevaProveedor">Nueva proveedor:</label>
+                            <label htmlFor="nuevaProveedor">Nuevo proveedor:</label>
                             <input
                                 type="text"
-                                id="nuevaProveedor"
-                                name="nuevaProveedor"
+                                id="nuevoProveedor"
+                                name="nuevoProveedor"
                             />
                         </section>}
 

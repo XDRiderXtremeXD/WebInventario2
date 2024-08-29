@@ -62,10 +62,20 @@
 }
 
 .nuevoProveedor{
-    display: block;
+    display: flex;
+    flex-direction: column;
     text-align: start;
 }
-.nuevoProveedor input{
+#nuevoProveedor {
     width: 90% ;
-    margin: 0;
+    margin-top: 10px;
+    margin-left: 0;
+}
+
+
+#contenedor-tarjeta-producto-modificacion figure img {
+    width: 250px;
+    height: 250px;
+    transition: transform 0.3s ease;
+    border: 3px solid black;
 }

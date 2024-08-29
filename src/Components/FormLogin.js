@@ -31,7 +31,7 @@ const FormLogin = (props) => {
         <div className='container-login'>
             <section className='formSection formLogin'>
                 <div className="agregar">
-                    <h2>Iniciar Sesión</h2>
+                    <h2>Iniciar Sesión</h2>  
                 </div>
                 <form onSubmit={VerificarLogin} action="">
                     <label htmlFor="correo">Correo:</label>
