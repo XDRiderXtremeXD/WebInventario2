@@ -39,7 +39,7 @@ const ListUsuario = (props) => {
             <button onClick={() => setIsModalOpenAddUser(true)} >Agregar Usuario  <img className="icon" src={"/anadir-usuario.png"} alt='icono-añadir' /></button>
             <Tabla clase="tablaListadoUsuarios" atributos={["id", "Nombre", "Email", "DNI", "TipoUsuario", "Accion"]} tabla={tabla} />
             {isModalOpenAddUser && <section className='modal-cubrir'>
-                <FormUsuario cerrar={() => setIsModalOpenAddUser(false)} />
+                <FormUsuario cerrar={() => setIsModalOpenAddUser(false)} setUsers={setUsers} />
             </section>}
         </div>
     )

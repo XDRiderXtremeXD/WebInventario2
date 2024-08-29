@@ -61,6 +61,7 @@ const FormUsuario = (props) => {
         }
         else {
             usuarios.push({ id, Nombre: nombre, Email: correo, DNI: dni, TipoUsuario: tipoUsuario, password: password, direccion: direccion, telefono: telefono })
+            props.setUsers(usuarios);
             Alertas({ tipo: "ok", frase: "Usuario  Agregado" });
             console.log({ password });
             props.cerrar();
