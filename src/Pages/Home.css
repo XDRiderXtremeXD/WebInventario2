@@ -1,8 +1,8 @@
 #HomePage{
-    background-size: cover;
     background-color: black;
-    background-image: url(https://png.pngtree.com/background/20230612/original/pngtree-warehouses-with-lots-of-boxes-in-the-middle-picture-image_3182349.jpg);
-    height: calc(100vh - 60px);
+    background-image: url("../../public/fondo-home.jpg");
+	background-size: cover;
+	height: calc(100vh - 60px);
     display: flex;
     justify-content: center;
     align-content: center;
