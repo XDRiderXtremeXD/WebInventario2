@@ -1,6 +1,8 @@
 # Esto es solo un inventario con una base de datos simulada en js dentro de los archivos, no esta conectada a una base de datos. Fines educativos.
 ## Cuenta prueba:  correo: angelo_chumpitaz@correo.com contraseña:123456
 
+<img width="2540" height="1239" alt="image" src="https://github.com/user-attachments/assets/fe752e97-84b9-4433-beff-53d408f723fe" />
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
